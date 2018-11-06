@@ -26,7 +26,7 @@ public class Battlefield_view {
 	 */
 	private JFrame frame = new JFrame("Shippps");
 	
-	private Battlefield_model battlefield_model = new Battlefield_model();
+	Battlefield_model battlefield_model = new Battlefield_model(); 
 	
 	/**
 	 * The width of the Game Window
@@ -55,7 +55,7 @@ public class Battlefield_view {
 		Stroke stroke = new BasicStroke(12); 
 		for(Ship ship : all_ships) {
 			g2D.setStroke(stroke);
-			g2D.drawRect(ship.getPos().getX(), ship.getPos().getY(), ship.getSize_x(), ship.getSize_y());
+			g2D.drawRect((int)ship.getPos().getX(), (int)ship.getPos().getY(), ship.getSize_x(), ship.getSize_y());
 		}
 		
 	}
