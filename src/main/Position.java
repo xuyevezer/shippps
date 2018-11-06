@@ -5,12 +5,23 @@ public class Position {
 	private int y;
 	private int orientation;
 	
+	/**
+	 * Default constructor that only needs coordinates. Orientation is set to 0.
+	 * @param x The x-coordinate of the new position
+	 * @param y The y-coordinate of the new position
+	 */
 	public Position(int x, int y) {
 		this.x = x;
 		this.y = y;
 		this.orientation = 0;
 	}
 	
+	/**
+	 * Constructor that also sets the orientation.
+	 * @param x The x-coordinate of the new position
+	 * @param y The y-coordinate of the new position
+	 * @param orientation The orientation of the new position
+	 */
 	public Position(int x, int y, int orientation) {
 		this.x = x;
 		this.y = y;
