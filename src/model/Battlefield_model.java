@@ -20,8 +20,11 @@ public class Battlefield_model extends Thread {
 		super();
 		
 		addObserver(battlefield_view);
+		Ship testShip = new Ship(new Position(100, 100), 50, 30, 100, 5);
+		testShip.setSpeed(0.1);
+		testShip.getPosition().setOrientation(90);
 		
-		ships.add(new Ship(new Position(100, 100), 50, 30, 100, 5));
+		ships.add(testShip);
 		ships.add(new Ship(new Position(350, 300), 300, 100, 40, 5));
 
 		//example projectiles
@@ -43,14 +46,20 @@ public class Battlefield_model extends Thread {
 	
 	@Override
 	public void run() {
-		notifyObservers();
-		
-		// pause thread by a few millis
-        try {
-            Thread.sleep(4);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+		while(true) {
+			for(Ship ship : ships) {
+				ship.move();
+			}
+			
+			notifyObservers();
+			
+			// pause thread by a few millis
+	        try {
+	            Thread.sleep(4);
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+		}
 	}
 
 	public List<Ship> getShips() {

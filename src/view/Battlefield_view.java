@@ -35,12 +35,13 @@ public class Battlefield_view extends JPanel{
 		frame.setTitle("shippps");
 		frame.setSize(Constants.FIELD_WIDTH, Constants.FIELD_HEIGHT);
 		frame.setResizable(false);
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.add(this);
 		
 		battlefield_model = new Battlefield_model(this);
+		battlefield_model.start();
 	}
 	
 	void paintProjectiles(Graphics g) {

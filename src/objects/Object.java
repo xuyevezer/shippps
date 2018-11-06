@@ -24,7 +24,7 @@ public abstract class Object {
 	/**
 	 * The speed of the object
 	 */
-	private int speed;
+	private double speed;
 	
 	/**
 	 * Default constructor, that sets the speed to 0.
@@ -54,8 +54,8 @@ public abstract class Object {
 	}
 
 	public void move() {
-		position.setX(position.getX() + speed * Math.sin(position.getOrientation()));
-		position.setY(position.getY() + speed * Math.cos(position.getOrientation()));
+		position.setX(position.getX() + speed * Math.sin(Math.toRadians(position.getOrientation())));
+		position.setY(position.getY() + speed * Math.cos(Math.toRadians(position.getOrientation())));
 	}
 	
 	public Position getPosition() {
@@ -82,11 +82,11 @@ public abstract class Object {
 		this.size_y = size_y;
 	}
 
-	public int getSpeed() {
+	public double getSpeed() {
 		return speed;
 	}
 
-	public void setSpeed(int speed) {
+	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
 }
