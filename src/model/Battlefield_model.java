@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import main.Position;
+import objects.Cruiser;
 import objects.Projectile;
 import objects.Ship;
 import view.Battlefield_view;
@@ -26,6 +27,9 @@ public class Battlefield_model extends Thread {
 		
 		ships.add(testShip);
 		ships.add(new Ship(new Position(350, 300), 300, 100, 40, 5));
+		
+		Ship cruiser = new Cruiser(new Position(200,200));
+		ships.add(cruiser);
 
 		//example projectiles
 		projectiles.add(new Projectile(new Position(110, 110), 10, 10, 100));
