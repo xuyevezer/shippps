@@ -54,8 +54,8 @@ public abstract class Object {
 	}
 
 	public void move() {
-		position.setX(position.getX() + speed * Math.cos(position.getOrientation()));
-		position.setY(position.getY() + speed * Math.sin(position.getOrientation()));
+		position.setX(position.getX() + speed * Math.sin(position.getOrientation()));
+		position.setY(position.getY() + speed * Math.cos(position.getOrientation()));
 	}
 	
 	public Position getPosition() {
