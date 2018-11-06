@@ -21,8 +21,12 @@ public class Battlefield_model extends Thread {
 		
 		addObserver(battlefield_view);
 		
-		ships.add(new Ship(new Position(100, 100), 50, 30, 100, 5));
-		ships.add(new Ship(new Position(350, 300), 300, 100, 40, 5));
+		ships.add(new Ship(new Position(100, 100), 200, 40, 100, 5));
+		ships.add(new Ship(new Position(350, 300), 180, 60, 100, 5));
+		ships.add(new Ship(new Position(600, 400), 190, 40, 100, 5));
+		ships.add(new Ship(new Position(250, 200), 200, 40, 100, 5));
+		ships.add(new Ship(new Position(150, 500), 200, 40, 100, 5));
+		ships.add(new Ship(new Position(550, 50), 150, 30, 100, 5));
 
 		//example projectiles
 		projectiles.add(new Projectile(new Position(110, 110), 10, 10, 100));
