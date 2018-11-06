@@ -16,7 +16,7 @@ public class Position {
 	public Position(double x, double y) {
 		this.x = x;
 		this.y = y;
-		this.orientation = 0;
+		setOrientation(orientation);
 	}
 	
 	/**
@@ -52,6 +52,8 @@ public class Position {
 	}
 
 	public void setOrientation(double orientation) {
-		this.orientation = orientation % 360;
+
+		this.orientation = 180 - (orientation % 360);
+
 	}
 }
