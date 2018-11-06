@@ -3,10 +3,18 @@ package main;
 public class Position {
 	private int x;
 	private int y;
+	private int orientation;
 	
 	public Position(int x, int y) {
 		this.x = x;
 		this.y = y;
+		this.orientation = 0;
+	}
+	
+	public Position(int x, int y, int orientation) {
+		this.x = x;
+		this.y = y;
+		this.orientation = orientation;
 	}
 
 	public int getX() {
@@ -23,5 +31,13 @@ public class Position {
 
 	public void setY(int y) {
 		this.y = y;
+	}
+
+	public int getOrientation() {
+		return orientation;
+	}
+
+	public void setOrientation(int orientation) {
+		this.orientation = orientation;
 	}
 }

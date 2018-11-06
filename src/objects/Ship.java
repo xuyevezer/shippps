@@ -2,7 +2,7 @@ package objects;
 
 import main.Position;
 
-public class Ship {
+public class Ship extends Object{
 	private Position pos;
 	private int size_x;
 	private int size_y;
@@ -11,9 +11,7 @@ public class Ship {
 	//private int speed;
 	
 	public Ship(Position pos, int size_x, int size_y, int health, int damage) {
-		this.pos = pos;
-		this.size_x = size_x;
-		this.size_y = size_y;
+		super(pos, size_x, size_y);
 		this.health = health;
 		this.damage = damage;
 	}
