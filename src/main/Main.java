@@ -1,9 +1,10 @@
 package main;
 
-import field.BattlefieldView;
+import view.Battlefield_view;
 
 public class Main {
 	public static void main(String[] args) {
-		new BattlefieldView();
+		Battlefield_view bv = new Battlefield_view();
+		bv.modelChanged();
 	}
 }
