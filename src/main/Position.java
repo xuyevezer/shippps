@@ -4,16 +4,16 @@
 package main;
 
 public class Position {
-	private int x;
-	private int y;
-	private int orientation;
+	private double x;
+	private double y;
+	private double orientation;
 	
 	/**
 	 * Default constructor that only needs coordinates. Orientation is set to 0.
 	 * @param x The x-coordinate of the new position
 	 * @param y The y-coordinate of the new position
 	 */
-	public Position(int x, int y) {
+	public Position(double x, double y) {
 		this.x = x;
 		this.y = y;
 		this.orientation = 0;
@@ -25,33 +25,33 @@ public class Position {
 	 * @param y The y-coordinate of the new position
 	 * @param orientation The orientation of the new position
 	 */
-	public Position(int x, int y, int orientation) {
+	public Position(double x, double y, double orientation) {
 		this.x = x;
 		this.y = y;
 		this.orientation = orientation;
 	}
 
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
-	public void setX(int x) {
+	public void setX(double x) {
 		this.x = x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 
-	public void setY(int y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 
-	public int getOrientation() {
+	public double getOrientation() {
 		return orientation;
 	}
 
-	public void setOrientation(int orientation) {
+	public void setOrientation(double orientation) {
 		this.orientation = orientation;
 	}
 }

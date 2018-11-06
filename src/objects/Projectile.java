@@ -6,6 +6,9 @@ package objects;
 import main.Position;
 
 public class Projectile extends Object{
+	/**
+	 * The amount of damage a projectile deals
+	 */
 	int damage;
 	
 	/**
@@ -27,8 +30,16 @@ public class Projectile extends Object{
 	 * @param size_x The maximum size of the object in the x-direction
 	 * @param size_y The maximum size of the object in the y-direction
 	 */
-	public Projectile(int x, int y, int orientation, int size_x, int size_y, int damage) {
+	public Projectile(double x, double y, double orientation, int size_x, int size_y, int damage) {
 		super(x, y, orientation, size_x, size_y);
+		this.damage = damage;
+	}
+
+	public int getDamage() {
+		return damage;
+	}
+
+	public void setDamage(int damage) {
 		this.damage = damage;
 	}
 }

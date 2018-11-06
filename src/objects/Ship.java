@@ -11,7 +11,6 @@ public class Ship extends Object{
 	private int size_y;
 	private int health;
 	private int damage;
-	//private int speed;
 	
 	/**
 	 * Default constructor
@@ -37,7 +36,7 @@ public class Ship extends Object{
 	 * @param health The amount of health points the ship has
 	 * @param damage The amount of damage a single shot of the ships guns deal
 	 */
-	public Ship(int x, int y, int orientation, int size_x, int size_y, int health, int damage) {
+	public Ship(double x, double y, double orientation, int size_x, int size_y, int health, int damage) {
 		super(x,y,orientation, size_x, size_y);
 		this.health = health;
 		this.damage = damage;
