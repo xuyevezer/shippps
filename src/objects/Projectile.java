@@ -9,7 +9,7 @@ public class Projectile extends Object{
 	/**
 	 * The amount of damage a projectile deals
 	 */
-	int damage;
+	private int damage;
 	
 	/**
 	 * Default constructor
