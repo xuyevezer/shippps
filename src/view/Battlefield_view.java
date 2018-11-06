@@ -3,14 +3,13 @@ package view;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.RenderingHints;
 import java.awt.geom.Rectangle2D;
-import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import model.Battlefield_model;
+import objects.Projectile;
 import objects.Ship;
 /**
  * The Battlefield class is the game window
@@ -51,10 +50,16 @@ public class Battlefield_view extends JPanel{
 		frame.add(this);
 	}
 	
+	void paintProjectiles(Graphics g) {
+		Graphics2D g2D = (Graphics2D) g;
+		for(Projectile projectile : battlefield_model.getProjectiles()) {
+			g2D.drawOval((int)projectile.getPosition().getX(), (int)projectile.getPosition().getY(), projectile.getSize_x(), projectile.getSize_y());
+		}
+	}
+	
 	void paintShips(Graphics g) {
 		Graphics2D g2D = (Graphics2D) g;
-		List<Ship> all_ships = battlefield_model.getShips();
-		for(Ship ship : all_ships) {
+		for(Ship ship : battlefield_model.getShips()) {
 			g2D.draw(new Rectangle2D.Double(ship.getPosition().getX(), 
 											ship.getPosition().getY(), 
 											ship.getSize_x(), 
@@ -66,6 +71,7 @@ public class Battlefield_view extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		paintShips(g);
+		paintProjectiles(g);
 	}
 	
 	public void modelChanged() {
