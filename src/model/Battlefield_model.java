@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import main.Position;
+import objects.Projectile;
 import objects.Ship;
 import view.Battlefield_view;
 
@@ -13,6 +14,8 @@ public class Battlefield_model extends Thread {
 	
 	private List<Ship> ships = new ArrayList<>();
 	
+	private List<Projectile> all_projectiles = new ArrayList<>();
+	
 	public Battlefield_model(Battlefield_view battlefield_view) {
 		super();
 		
@@ -20,6 +23,9 @@ public class Battlefield_model extends Thread {
 		
 		ships.add(new Ship(new Position(100, 100), 50, 30, 100, 5));
 		ships.add(new Ship(new Position(350, 300), 300, 100, 40, 5));
+
+		//example projectiles
+		all_projectiles.add(new Projectile(new Position(110, 110), 10, 10, 100));
 	}
 	
    public void addObserver(Battlefield_view observer) {
@@ -49,5 +55,9 @@ public class Battlefield_model extends Thread {
 
 	public List<Ship> getShips() {
 		return ships;
+	}
+	
+	public List<Projectile> getProjectiles() {
+		return all_projectiles;
 	}
 }

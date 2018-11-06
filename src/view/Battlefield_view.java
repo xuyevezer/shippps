@@ -8,7 +8,9 @@ import java.awt.geom.Rectangle2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import main.Constants;
 import model.Battlefield_model;
+import objects.Projectile;
 import objects.Ship;
 /**
  * The Battlefield class is the game window
@@ -23,16 +25,6 @@ public class Battlefield_view extends JPanel{
 	
 	JFrame frame = new JFrame();
 	
-	/**
-	 * The width of the Game Window
-	 */
-	private int field_width = 1000;
-	
-	/**
-	 * The height of the Game Window
-	 */
-	private int field_height = 800;
-	
 	private Battlefield_model battlefield_model;
 	
 	/**
@@ -41,7 +33,7 @@ public class Battlefield_view extends JPanel{
 	public Battlefield_view()  {
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setTitle("shippps");
-		frame.setSize(field_width, field_height);
+		frame.setSize(Constants.FIELD_WIDTH, Constants.FIELD_HEIGHT);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
@@ -49,6 +41,13 @@ public class Battlefield_view extends JPanel{
 		frame.add(this);
 		
 		battlefield_model = new Battlefield_model(this);
+	}
+	
+	void paintProjectiles(Graphics g) {
+		Graphics2D g2D = (Graphics2D) g;
+		for(Projectile projectile : battlefield_model.getProjectiles()) {
+			g2D.drawOval((int)projectile.getPosition().getX(), (int)projectile.getPosition().getY(), projectile.getSize_x(), projectile.getSize_y());
+		}
 	}
 	
 	void paintShips(Graphics g) {
@@ -65,6 +64,7 @@ public class Battlefield_view extends JPanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		paintShips(g);
+		paintProjectiles(g);
 	}
 	
 	public void modelChanged() {
