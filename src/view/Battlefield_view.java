@@ -8,6 +8,7 @@ import java.awt.geom.Rectangle2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import main.Constants;
 import model.Battlefield_model;
 import objects.Projectile;
 import objects.Ship;
@@ -27,22 +28,12 @@ public class Battlefield_view extends JPanel{
 	JFrame frame = new JFrame();
 	
 	/**
-	 * The width of the Game Window
-	 */
-	private int field_width = 1000;
-	
-	/**
-	 * The height of the Game Window
-	 */
-	private int field_height = 800;
-	
-	/**
 	 * initialization of a Battlefield opens up a Jframe
 	 */
 	public Battlefield_view()  {
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setTitle("shippps");
-		frame.setSize(field_width, field_height);
+		frame.setSize(Constants.FIELD_WIDTH, Constants.FIELD_HEIGHT);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setLocationRelativeTo(null);

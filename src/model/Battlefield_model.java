@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.Position;
 import objects.Projectile;
 import objects.Ship;
 import view.Battlefield_view;
