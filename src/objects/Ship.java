@@ -1,3 +1,6 @@
+/**
+ * General ship class. A ship has a position, health points and deals damage by shooting stuff.
+ */
 package objects;
 
 import main.Position;

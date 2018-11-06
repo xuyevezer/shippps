@@ -23,7 +23,7 @@ public class Object {
 	}
 
 	/**
-	 * Contructor that creates a new position from scratch
+	 * Contructor that also creates a new position for the object
 	 * @param x X-coordinate of the new position
 	 * @param y Y-coordinate of the new position
 	 * @param orientation Orientation of the new position

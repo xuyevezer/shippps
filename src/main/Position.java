@@ -1,3 +1,6 @@
+/**
+ * A position consists of a set of 2D-coordinates and an orientation.
+ */
 package main;
 
 public class Position {

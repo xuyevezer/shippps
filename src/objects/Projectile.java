@@ -1,3 +1,6 @@
+/**
+ * General Projectile class. An projectile has a position and does damage, when it hits something.
+ */
 package objects;
 
 import main.Position;
