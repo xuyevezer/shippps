@@ -14,7 +14,7 @@ public class Battlefield_model extends Thread {
 	
 	private List<Ship> ships = new ArrayList<>();
 	
-	private List<Projectile> all_projectiles = new ArrayList<>();
+	private List<Projectile> projectiles = new ArrayList<>();
 	
 	public Battlefield_model(Battlefield_view battlefield_view) {
 		super();
@@ -25,7 +25,7 @@ public class Battlefield_model extends Thread {
 		ships.add(new Ship(new Position(350, 300), 300, 100, 40, 5));
 
 		//example projectiles
-		all_projectiles.add(new Projectile(new Position(110, 110), 10, 10, 100));
+		projectiles.add(new Projectile(new Position(110, 110), 10, 10, 100));
 	}
 	
    public void addObserver(Battlefield_view observer) {
@@ -58,6 +58,6 @@ public class Battlefield_model extends Thread {
 	}
 	
 	public List<Projectile> getProjectiles() {
-		return all_projectiles;
+		return projectiles;
 	}
 }
