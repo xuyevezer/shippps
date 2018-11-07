@@ -4,8 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import main.Position;
+import objects.Battleship;
+import objects.Carrier;
+import objects.Cruiser;
+import objects.Destroyer;
+import objects.Patrol;
 import objects.Projectile;
 import objects.Ship;
+import objects.Submarine;
 import view.Battlefield_view;
 
 public class Battlefield_model extends Thread {
@@ -20,18 +26,13 @@ public class Battlefield_model extends Thread {
 		super();
 		
 		addObserver(battlefield_view);
-		Ship testShip = new Ship(new Position(100, 100), 50, 30, 100, 5);
-		testShip.setSpeed(0.1);
-		testShip.getPosition().setOrientation(90);
 		
-		ships.add(new Ship(new Position(100, 100), 200, 40, 100, 5));
-		ships.add(new Ship(new Position(350, 300), 180, 60, 100, 5));
-		ships.add(new Ship(new Position(600, 400), 190, 40, 100, 5));
-		ships.add(new Ship(new Position(250, 200), 200, 40, 100, 5));
-		ships.add(new Ship(new Position(150, 500), 200, 40, 100, 5));
-		ships.add(new Ship(new Position(550, 50), 150, 30, 100, 5));
-		ships.add(testShip);
-		ships.add(new Ship(new Position(350, 300), 300, 100, 40, 5));
+		ships.add(new Battleship(new Position(100, 100)));
+		ships.add(new Carrier(new Position(350, 300)));
+		ships.add(new Cruiser(new Position(600, 400)));
+		ships.add(new Destroyer(new Position(250, 200)));
+		ships.add(new Submarine(new Position(150, 500)));
+		ships.add(new Patrol(new Position(550, 50)));
 
 		//example projectiles
 		projectiles.add(new Projectile(new Position(110, 110), 10, 10, 100));

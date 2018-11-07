@@ -58,27 +58,7 @@ public class Battlefield_view extends JPanel{
 		Graphics2D g2D = (Graphics2D) g;
 		for(int i = 0; i < battlefield_model.getShips().size(); i++) {
 			Ship ship = battlefield_model.getShips().get(i);
-			BufferedImage ship_image;
-			try {
-				switch(i%6) {
-				case 0: ship_image = ImageIO.read(new File("res/battleship.png")); break;
-				case 1: ship_image = ImageIO.read(new File("res/carrier.png")); break;
-				case 2: ship_image = ImageIO.read(new File("res/cruiser.png")); break;
-				case 3: ship_image = ImageIO.read(new File("res/destroyer.png")); break;
-				case 4: ship_image = ImageIO.read(new File("res/patrol.png")); break;
-				case 5: ship_image = ImageIO.read(new File("res/submarine.png")); break;
-				default: ship_image = ImageIO.read(new File("res/battleship.png"));
-				
-				}
-				g2D.drawImage(ship_image, (int)ship.getPosition().getX(), (int)ship.getPosition().getY(), ship.getSize_x(), ship.getSize_y(), this);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-//			g2D.draw(new Rectangle2D.Double(ship.getPosition().getX(), 
-//											ship.getPosition().getY(), 
-//											ship.getSize_x(), 
-//											ship.getSize_y()));
+				g2D.drawImage(ship.getImage(), (int)ship.getPosition().getX(), (int)ship.getPosition().getY(), ship.getSize_x(), ship.getSize_y(), this);
 		}
 	}
 	
@@ -95,6 +75,7 @@ public class Battlefield_view extends JPanel{
 			e.printStackTrace();
 		}
 		
+		//drawing other objects
 		paintShips(g);
 		paintProjectiles(g);
 	}

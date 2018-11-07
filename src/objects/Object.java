@@ -3,6 +3,8 @@
  */
 package objects;
 
+import java.awt.image.BufferedImage;
+
 import main.Position;
 
 public abstract class Object {
@@ -25,6 +27,11 @@ public abstract class Object {
 	 * The speed of the object
 	 */
 	private double speed;
+	
+	/**
+	 * The image showing the object in the view
+	 */
+	protected BufferedImage image;
 	
 	/**
 	 * Default constructor, that sets the speed to 0.
@@ -88,5 +95,9 @@ public abstract class Object {
 
 	public void setSpeed(double speed) {
 		this.speed = speed;
+	}
+	
+	public BufferedImage getImage() {
+		return image;
 	}
 }

@@ -5,7 +5,7 @@ package objects;
 
 import main.Position;
 
-public class Ship extends Object{
+public abstract class Ship extends Object{
 	private int health;
 	private int damage;
 	
